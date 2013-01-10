@@ -24,7 +24,7 @@ function(domReady, app, Router) {
 
     function start(isDevice) {
 
-      console.log('Main.deviceReady: running on the desktop: ' + isDevice);
+      console.log('Main.start: running on a device: ' + isDevice);
 
       // Create a router on the application
       app.router = new Router();
