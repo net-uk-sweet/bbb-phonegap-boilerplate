@@ -1,6 +1,8 @@
 require([
 
-  // domReady lib.
+  // libs
+  'jquery',
+  'backbone',
   'domReady',
 
   // Application.
@@ -10,7 +12,7 @@ require([
   'router'
 ],
 
-function(domReady, app, Router) {
+function($, Backbone, domReady, app, Router) {
 
   'use strict';
 
@@ -49,7 +51,7 @@ function(domReady, app, Router) {
   // attribute, bypass the delegation completely.
   $(document).on('click', 'a:not([data-bypass])', function(evt) {
     // Get the absolute anchor href.
-    var href = $(this).attr("href");
+    var href = $(this).attr('href');
 
     // If the href exists and is a hash route, run it through Backbone.
     if (href && href.indexOf('#') === 0) {

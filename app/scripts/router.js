@@ -1,4 +1,9 @@
 define([
+
+  // libs
+  'jquery',
+  'backbone',
+
   // Application.
   'app',
 
@@ -9,7 +14,7 @@ define([
   'models/application-model'
 ],
 
-function(app, ApplicationView, ApplicationModel) {
+function($, Backbone, app, ApplicationView, ApplicationModel) {
 
   'use strict';
 
