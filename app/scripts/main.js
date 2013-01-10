@@ -18,9 +18,13 @@ function(domReady, app, Router) {
 
     console.log('Main.domReady: ');
 
-    function onDeviceReady(isDesktop) {
+    function onDeviceReady() {
+      start(true);
+    }
 
-      console.log('Main.deviceReady: running on the desktop: ', isDesktop);
+    function start(isDevice) {
+
+      console.log('Main.deviceReady: running on the desktop: ' + isDevice);
 
       // Create a router on the application
       app.router = new Router();
@@ -36,7 +40,7 @@ function(domReady, app, Router) {
       document.addEventListener('deviceready', onDeviceReady, false);
     } else {
       // On desktop don't have to wait for anything
-      onDeviceReady(true);
+      start(false);
     }
   });
 
