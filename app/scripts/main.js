@@ -20,10 +20,6 @@ function($, Backbone, domReady, app, Router) {
 
     console.log('Main.domReady: ');
 
-    function onDeviceReady() {
-      start(true);
-    }
-
     function start(isDevice) {
 
       console.log('Main.start: running on a device: ' + isDevice);
@@ -35,6 +31,10 @@ function($, Backbone, domReady, app, Router) {
       // root folder to '/' by default.  Change in app.js.
       // NB. Phonegap doesn't seem to work with pushState
       Backbone.history.start( { pushState: false, root: app.root });
+    }
+
+    function onDeviceReady() {
+      start(true);
     }
 
     if (navigator.userAgent.match(/(iPad|iPhone|Android)/)) {
